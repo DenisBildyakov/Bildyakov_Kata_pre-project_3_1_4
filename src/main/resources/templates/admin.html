@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title id="title"></title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+              crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+                crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+
+<!--        Скрипты, ответственные за CRUD-->
+        <script src="/js/addNewUser.js"></script>
+        <script src="/js/deleteUser.js"></script>
+        <script src="/js/editUser.js"></script>
+<!--        Скрипты, делающие запрос в базу-->
+        <script src="/js/findAllRoles.js"></script>
+        <script src="/js/findAllUsers.js"></script>
+        <script src="/js/findMeUser.js"></script>
+<!--        Скрипты для конструирования таблиц с содержимым-->
+        <script src="/js/adminPanel.js"></script>
+        <script src="/js/showAllUsers.js"></script>
+        <script src="/js/showUserInfo.js"></script>
+        <script src="/js/showAddNewUserPanel.js"></script>
+<!--        Скрипт для проверки прав доступа-->
+        <script src="/js/checkRole.js"></script>
+    </head>
+<body onload="onLoadFunction();">
+<!--Шапка-->
+<div class="container-fluid">
+    <div class="row bg-dark bg-gradient align-items-center">
+        <div class="col-11">
+            <span class="nav navbar-text text-white fs-4" id="meUserHeader"></span>
+        </div>
+        <div class="col-1">
+
+            <!--        Логаут-->
+            <ul class="nav navbar-nav float-end">
+                <li class="nav-item">
+                    <a class="nav-link active fs-5 text-white" href="/logout">LOGOUT</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Боковое меню-->
+    <div class="row">
+        <div class="col-md-2 bg-white vh-100"><br>
+            <ul class="nav flex-column nav-pills fs-5" id="sideMenu">
+            </ul>
+        </div>
+
+        <!--        Основной блок-->
+        <div class="col-md-10 bg-light vh-100"><br>
+            <div id="pageSubHeader"></div>
+
+            <!--            Таблица с таблицей-->
+            <table class="table table-striped bg-white align-middle">
+                <thead id="adminPanelNavTabs">
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td id="usersTableSubHeader">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td id="tableInputArea">
+                        <!--                        таблица юзеров-->
+                        <table class="table table-striped bg-white align-middle">
+                            <thead class="fs-5">
+                            <tr id="userInfoTableHeader">
+                            </tr>
+                            </thead>
+                            <tbody id="usersInfoTable">
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
