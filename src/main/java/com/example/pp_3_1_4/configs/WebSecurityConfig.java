@@ -29,6 +29,7 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/", "/index").permitAll()
                 .antMatchers("/admin/**").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
@@ -38,9 +39,10 @@ public class WebSecurityConfig {
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll()
-                .and().httpBasic();
-        http.cors().disable().csrf().disable();
+                .permitAll();
+// Добавлял эти настройки для работы с постманом и базовой авторизации через него
+//                .and().httpBasic();
+//        http.cors().disable().csrf().disable();
         return http.build();
     }
 
