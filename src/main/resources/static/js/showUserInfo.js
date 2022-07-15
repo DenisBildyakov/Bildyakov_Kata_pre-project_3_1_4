@@ -23,7 +23,7 @@ function showUserInfo() {
     // Конструкция заголовка окна
     $("#pageSubHeader").children().remove();
     $(
-        "<h1>User infomation page</h1>"
+        "<h1>User information page</h1>"
     ).appendTo("#pageSubHeader");
 
     // Конструкция заголовка таблицы
